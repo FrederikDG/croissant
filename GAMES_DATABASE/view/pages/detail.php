@@ -11,7 +11,7 @@
     filter: blur(5px) grayscale(100%) brightness(0.5);
   }
 
-  .detail__content {
+  .detail__container {
     position: relative;
     z-index: 1;
   }
@@ -28,43 +28,59 @@
 
 <!-- CONTENT -->
 
-<div class="detail__content">
+<div class="detail__container">
   <div class="detail__box nav__box">
     <nav>
-      <a href="<?php echo 'index.php?page=home' ?>">home</a>
+      <a href="<?php echo $_SERVER['HTTP_REFERER'] ?>">&#11164 BACK</a>
     </nav>
   </div>
   <div class="detail__box name__box">
-    <h1>
-      <?php echo ($game->name) ?>
-    </h1>
-    <h2>
-      <?php echo ($game->genre) ?>
-    </h2>
-    <p>
+    <div class="detail__header">
+      <h1 class="detail__name">
+        <?php echo ($game->name) ?>
+      </h1>
+
+      <h2 class="detail__genre">
+        <?php echo ($game->genre) ?>
+      </h2>
+    </div> <br>
+    <p class="detail__description">
       <?php echo ($game->game_description) ?>
     </p>
   </div>
   <div class="detail__box price__box">
     <a href="<?php echo ($game->url) ?>">
-    <img src="https://i.ibb.co/mJHFDL1/steamlogo.png" alt="steamlogo" width="300" height=auto>
-    <p>
-      $<?php echo ($game->price) ?>
-    </p>
-</a>
+      <img src="./assets/img/steamlogo.png" alt="steamlogo" width="300" height=auto>
+      <p>
+        $<?php echo ($game->price) ?>
+      </p>
+    </a>
   </div>
-  <div class="detail__box suggestion__box">
+  <!-- <div class="detail__box suggestion__box">
     <h2>
       suggestions:
     </h2>
 
-  </div>
+  </div>-->
   <div class="detail__box details__box">
-  <img src="https://cdn.akamai.steamstatic.com/steam/apps/<?php echo ($game->game_code)?>/header.jpg" alt="<?php ($game->name)?>" width="auto" height="150px">
-  <h2><?php echo($game->developer)?></h2>
-  <h2><?php echo($game->publisher)?></h2>
-  <h2>Achievements: <strong><?php echo($game->achievements)?></strong></h2>
-  <h2><?php echo($game->release_date)?></h2>
-  <h2><?php echo($game->languages)?></h2>
+    <img src="https://cdn.akamai.steamstatic.com/steam/apps/<?php echo ($game->game_code) ?>/header.jpg" alt="<?php ($game->name) ?>" width="auto" height="auto">
+    <h2>
+      <div class="summary__title">Developer:</div> <?php echo ($game->developer) ?>
+    </h2>
+    <h2>
+      <div class="summary__title">Publisher:</div> <?php echo ($game->publisher) ?>
+    </h2>
+    <h2>
+      <div class="summary__title">Achievements:</div> <?php echo ($game->achievements) ?>
+    </h2>
+    <h2>
+      <div class="summary__title">Release Date:</div> <?php echo ($game->release_date) ?>
+    </h2>
+    <h2>
+      <div class="summary__title">Languages:</div> <?php echo ($game->languages) ?>
+    </h2>
+    <h2>
+      <div class="summary__title">Mature Content:</div> <?php echo ($game->mature_content) ?>
+    </h2>
   </div>
 </div>

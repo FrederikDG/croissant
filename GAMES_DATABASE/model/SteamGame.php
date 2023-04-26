@@ -6,5 +6,4 @@ class SteamGame extends Model
 {
   //
   public $timestamps = false;
-
 }

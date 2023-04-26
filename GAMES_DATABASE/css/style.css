@@ -29,6 +29,9 @@ body {
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+    width: 90rem;
+    margin: auto;
+    overflow: hidden;
 }
 
 /* HOMEPAGE HEADER STYLES*/
@@ -225,53 +228,64 @@ strong {
 
 /* DETAIL STYLES*/
 
-.detail__content {
+.detail__container {
     color: white;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    width: 90rem;
+    margin: auto;
+    overflow: hidden;
+    margin-top: 2rem;
 }
 
+.detail__name{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.detail__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.detail__genre{
+    color:var(--subtitle__grey);
+    font-size: 1.5rem;
+}
+
+.detail__description{
+    color: var(--subtitle__grey);
+    font-size: .95rem
+}
 .detail__box {
     background-color: var(--background__grey);
     border-radius: .5rem;
-    padding: 1rem;
+    padding: 2rem;
     border: 2px solid var(--background__grey);
 }
 
 .nav__box {
-    grid-column: 1 / 4;
+    grid-column: 1;
     grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem;
 }
 
 .name__box {
-    grid-column: 1 / 4;
-    grid-row: 2 / 3;
+    grid-column: 1 / 6;
+    grid-row: 2 / 4;
 }
 
 .price__box {
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
-}
-
-.suggestion__box {
-    grid-column: 1 / 5;
-    grid-row: 5;
-}
-
-.details__box {
-    grid-column: 4 / 5;
-    grid-row: 1 / 5;
-}
-
-.details__box img{
-border-radius: .5rem;
-}
-
-.price__box a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    grid-column: 1 / 6;
+    grid-row: 4 / 5;
 }
 
 .price__box:hover {
@@ -279,5 +293,36 @@ border-radius: .5rem;
 }
 
 .price__box * {
-    font-size: larger;
+    font-size: 2rem;
+    font-weight: 500;
 }
+.price__box a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.suggestion__box {
+    grid-column: 1 / 10;
+    grid-row: 6;
+}
+
+.details__box {
+    grid-column: 6 / 10;
+    grid-row: 1 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 2rem;
+    font-size: 1.3rem;
+}
+.summary__title{
+    color: var(--subtitle__grey);
+    font-size: .95rem;
+}
+.details__box img {
+    border-radius: .5rem;
+}
+
+
